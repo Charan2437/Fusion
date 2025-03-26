@@ -83,7 +83,7 @@ class StudentComplain(models.Model):
     worker_id = models.ForeignKey(Workers, blank=True, null=True,on_delete=models.CASCADE)
     upload_complaint = models.FileField(blank=True)
     comment = models.CharField(max_length=100,  default="None")
-    #upload_resolved = models.FileField(blank=True,null=True)
+    upload_resolved = models.FileField(upload_to='resolved_complaints/', blank=True, null=True)
 
     def __str__(self):
         return str(self.complainer.user.username)

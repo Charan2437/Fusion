@@ -68,9 +68,16 @@ class FeedbackSerializer(serializers.Serializer):
     rating = serializers.IntegerField()
 
 # Serializer for Resolve Pending complaints
+# class ResolvePendingSerializer(serializers.Serializer):
+#     yesorno = serializers.ChoiceField(choices=[('Yes', 'Yes'), ('No', 'No')])
+#     comment = serializers.CharField(required=False, allow_blank=True)
+
 class ResolvePendingSerializer(serializers.Serializer):
     yesorno = serializers.ChoiceField(choices=[('Yes', 'Yes'), ('No', 'No')])
     comment = serializers.CharField(required=False, allow_blank=True)
+    upload_resolved = serializers.ImageField(required=False, allow_null=True)  
+
+
 # serializers.py
 
 from rest_framework import serializers
